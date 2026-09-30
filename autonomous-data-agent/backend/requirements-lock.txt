@@ -21,6 +21,7 @@ pydantic_core==2.46.5
 Pygments==2.21.0
 pytest==9.1.1
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.3
 python-multipart==0.0.32
 six==1.17.0
 starlette==1.7.0

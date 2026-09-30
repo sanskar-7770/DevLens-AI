@@ -75,9 +75,14 @@ def save_dataset(content, filename):
     UPLOADS.mkdir(exist_ok=True)
     target = UPLOADS / f"{dataset_id}.json"
     temporary = target.with_suffix(".tmp")
+    source = UPLOADS / f"{dataset_id}{extension}"
     try:
+        source.write_bytes(content)
         temporary.write_text(json.dumps(report, allow_nan=False), encoding="utf-8")
         temporary.replace(target)
+    except Exception:
+        source.unlink(missing_ok=True)
+        raise
     finally: temporary.unlink(missing_ok=True)
     return report["overview"]
 
@@ -87,3 +92,15 @@ def get_report(dataset_id):
     path = UPLOADS / f"{canonical}.json"
     if not path.is_file(): raise HTTPException(404, "Dataset not found. Upload the file again.")
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def get_dataframe(dataset_id):
+    """Reload the validated source, never the 20-row preview or a pickle."""
+    report = get_report(dataset_id)
+    extension = "." + report["overview"]["file_type"]
+    if extension not in (".csv", ".xlsx"):
+        raise HTTPException(422, "Unsupported stored dataset format.")
+    source = UPLOADS / f"{UUID(dataset_id)}{extension}"
+    if not source.is_file():
+        raise HTTPException(409, "This Phase 1 report has no retained dataset. Re-upload the original file to use Ask Your Data; the existing dashboard still works.")
+    return load_dataset(source.read_bytes(), extension)
