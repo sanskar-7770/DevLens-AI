@@ -15,6 +15,7 @@ export default function Sidebar({ active, setActive, onNew }) {
     ["Data Quality", ShieldCheck],
     ["Statistics", Table2],
     ["Visualizations", ChartNoAxesCombined],
+    ["Ask Your Data", MessageSquare],
   ];
   return (
     <aside className="sidebar">
@@ -45,18 +46,14 @@ export default function Sidebar({ active, setActive, onNew }) {
         ))}
       </nav>
       <div className="workspace-label future-label">
-        INTELLIGENCE <span>PHASE 2</span>
+        COMING NEXT <span>PHASE 4</span>
       </div>
-      {[
-        [Sparkles, "AI Analyst"],
-        [MessageSquare, "Ask Your Data"],
-        [FileText, "Reports"],
-      ].map(([Icon, label]) => (
+      {[[FileText, "Reports"]].map(([Icon, label]) => (
         <button
           className="nav-item future"
           key={label}
           disabled
-          title="Coming in Phase 2"
+          title="Coming in Phase 4"
         >
           <Icon size={18} />
           {label}
@@ -65,7 +62,7 @@ export default function Sidebar({ active, setActive, onNew }) {
       ))}
       <div className="sidebar-bottom">
         <div className="phase-card">
-          <span className="status-dot" /> Phase 1 · Foundation
+          <span className="status-dot" /> Phase 3 · Data analyst
           <p>
             Great insights start with
             <br />

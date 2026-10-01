@@ -894,3 +894,382 @@ th small {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.ask-workspace {
+  min-width: 0;
+}
+.ask-workspace h2,
+.agent-answer h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ask-workspace p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #667e70;
+  overflow-wrap: anywhere;
+}
+.agent-disclosure {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #738579;
+  margin-bottom: 20px;
+}
+.agent-welcome {
+  text-align: center;
+  padding: 30px;
+}
+.agent-welcome > svg {
+  color: #328c6b;
+  margin: 0 auto 15px;
+}
+.prompt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+.prompt-grid button {
+  white-space: normal;
+  text-align: left;
+  justify-content: flex-start;
+}
+.user-question {
+  margin: 22px 0 12px 12%;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: #e6f0e9;
+}
+.user-question small {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #64846f;
+}
+.user-question p {
+  margin: 5px 0 0;
+  color: #314e3d;
+  white-space: pre-wrap;
+}
+.agent-answer > p {
+  margin: 10px 0 20px;
+}
+.finding-list {
+  padding: 0;
+  list-style: none;
+  margin: 15px 0 22px;
+}
+.finding-list li {
+  border-left: 2px solid #c5ded0;
+  padding-left: 13px;
+  margin: 15px 0;
+}
+.finding-list p {
+  margin: 7px 0;
+}
+.agent-activity {
+  border: 1px solid #e1e9e3;
+  border-radius: 8px;
+  background: #f8faf8;
+  padding: 14px;
+  margin-top: 16px;
+}
+.agent-activity summary {
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+.agent-activity summary span {
+  margin-left: auto;
+  font-size: 10px;
+  color: #829587;
+}
+.agent-plan {
+  margin-top: 18px;
+  font-size: 12px;
+}
+.agent-plan ol {
+  list-style: decimal;
+  padding-left: 22px;
+  line-height: 1.9;
+}
+.agent-plan small {
+  display: block;
+  color: #7b9081;
+}
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+.activity-list li {
+  display: flex;
+  gap: 9px;
+  margin: 12px 0;
+  color: #418463;
+  font-size: 11px;
+}
+.activity-list small {
+  display: block;
+  color: #839689;
+  line-height: 1.7;
+}
+.next-analysis {
+  margin-top: 20px;
+}
+.next-analysis button {
+  display: block;
+  border: 0;
+  background: none;
+  color: #2d8664;
+  text-align: left;
+  font-size: 12px;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.agent-busy {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: #edf5ef;
+  border-radius: 9px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #3f7956;
+}
+.agent-busy small {
+  display: block;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.question-form {
+  background: white;
+  padding: 20px;
+  border: 1px solid #d9e5dc;
+  border-radius: 10px;
+}
+.question-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.question-form textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 85px;
+  max-height: 250px;
+  border: 1px solid #e1e9e2;
+  border-radius: 7px;
+  padding: 12px;
+  font: inherit;
+  font-size: 13px;
+  background: #fafcfb;
+}
+.question-form textarea:focus {
+  outline: 2px solid #5aa681;
+}
+.question-form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+.question-form small {
+  font-size: 10px;
+  color: #7b9081;
+}
+.ask-workspace button:disabled {
+  opacity: 0.5;
+}
+.agent-answer .chart-grid:empty {
+  display: none;
+}
+@media (max-width: 760px) {
+  .prompt-grid {
+    grid-template-columns: 1fr;
+  }
+  .question-form > div {
+    align-items: flex-start;
+  }
+  .ask-workspace > .card-title {
+    align-items: flex-start;
+  }
+  .user-question {
+    margin-left: 4%;
+  }
+  .question-form {
+    padding: 14px;
+  }
+}
+
+/* Phase 3: progressive disclosure in the existing green workspace theme. */
+.ml-controls {
+  margin: 18px 0;
+}
+.ml-controls summary,
+.ml-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #286d51;
+  padding: 8px 0;
+}
+.ml-controls form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ml-controls label {
+  font-size: 12px;
+  display: grid;
+  gap: 8px;
+}
+.ml-controls select {
+  max-width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #d7e3da;
+  border-radius: 6px;
+  background: #fff;
+  color: #24513d;
+}
+.ml-controls form > p {
+  grid-column: 1 / -1;
+}
+.ml-controls button {
+  justify-self: start;
+}
+.ml-result {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.ml-conclusion {
+  font-size: 21px !important;
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 780px;
+}
+.ml-takeaway {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  background: #f1f7f2;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+.ml-takeaway svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.ml-takeaway p {
+  margin: 0;
+}
+.ml-chart {
+  min-width: 0;
+}
+.ml-reliability {
+  border-left: 3px solid #bba76a;
+  padding: 12px 18px;
+  background: #fbfaf3;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.ml-reliability h3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.ml-reliability li,
+.ml-groups li {
+  line-height: 1.7;
+  margin: 8px 0;
+  font-size: 12px;
+}
+.ml-reliability ul,
+.ml-groups ul {
+  padding-left: 18px;
+}
+.ml-factors {
+  margin: 20px 0;
+}
+.factor-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) 2fr;
+  gap: 8px 18px;
+  margin: 16px 0;
+  font-size: 12px;
+}
+.factor-row meter {
+  width: 100%;
+  height: 18px;
+  accent-color: #21896b;
+}
+.factor-row small {
+  grid-column: 2;
+  color: #627c6c;
+}
+.ml-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+.ml-details {
+  border-top: 1px solid #dce6de;
+  padding: 12px 0;
+  margin-top: 16px;
+}
+.ml-details p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.ml-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  padding: 12px 0;
+}
+.ml-metrics dt {
+  color: #607566;
+  font-size: 11px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.ml-metrics dd {
+  margin: 6px 0;
+  font-size: 13px;
+}
+.metric-help {
+  border: 0;
+  background: none;
+  padding: 0;
+  display: inline-flex;
+  color: #597c67;
+}
+.metric-help:focus {
+  outline: 2px solid #21896b;
+}
+@media (max-width: 760px) {
+  .ml-controls form {
+    grid-template-columns: 1fr;
+  }
+  .ml-conclusion {
+    font-size: 18px !important;
+  }
+  .ml-groups {
+    grid-template-columns: 1fr;
+  }
+  .factor-row {
+    grid-template-columns: 1fr;
+  }
+  .factor-row small {
+    grid-column: 1;
+  }
+}

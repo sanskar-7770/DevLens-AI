@@ -9,6 +9,7 @@ import {
   ChevronRight,
   Activity,
 } from "lucide-react";
+import AskYourData from "../components/AskYourData";
 import Sidebar from "../components/Sidebar";
 import FileUpload from "../components/FileUpload";
 import DatasetOverview from "../components/DatasetOverview";
@@ -87,7 +88,7 @@ export default function App() {
           </span>
           <span className="engine-status">
             <span className="status-dot" />
-            Phase 1 · Analysis engine
+            Phase 3 · Analysis workspace
           </span>
         </header>
         <div className="content">
@@ -126,6 +127,12 @@ export default function App() {
                 overview={report.overview}
                 quality={report.quality}
               />
+              <div hidden={active !== "Ask Your Data"}>
+                <AskYourData
+                  key={report.overview.dataset_id}
+                  overview={report.overview}
+                />
+              </div>
               {active === "Overview" && (
                 <>
                   <section className="card">
@@ -221,8 +228,8 @@ export default function App() {
               <FileUpload onUpload={upload} busy={busy} progress={progress} />
               <div className="trust-line">
                 <ShieldCheck size={14} />
-                Processed locally by your backend<span>·</span>No external AI
-                services<span>·</span>Your original data stays unchanged
+                Pandas calculations stay local<span>·</span>Ask Your Data uses
+                Gemini summaries<span>·</span>Your original data stays unchanged
               </div>
               <div className="section-heading">
                 <div className="eyebrow">A SOLID FOUNDATION</div>
@@ -261,7 +268,9 @@ export default function App() {
               </div>
               <div className="phase-note">
                 <span className="pill">BUILT FOR WHAT’S NEXT</span>
-                <p>Analysis today. An autonomous AI analyst in Phase 2.</p>
+                <p>
+                  Explore your dashboard, then ask the AI analyst a question.
+                </p>
                 <span>Foundation → Intelligence</span>
               </div>
             </>
@@ -270,7 +279,7 @@ export default function App() {
             <span>
               DataAgent AI <span className="muted">/ Foundation workspace</span>
             </span>
-            <span>Phase 1 · Deterministic analysis</span>
+            <span>Pandas analysis · Gemini interpretation</span>
           </footer>
         </div>
       </main>
